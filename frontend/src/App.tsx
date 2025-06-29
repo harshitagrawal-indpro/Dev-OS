@@ -3,11 +3,11 @@ import { Sidebar } from './components/Sidebar';
 import { Header } from './components/Header';
 import { Dashboard } from './components/Dashboard';
 import { DatasetUpload } from './components/DatasetUpload';
-import { ModelTraining } from './components/ModelTraining';
+import ModelTraining from './components/ModelTraining';  // Default import
 import { APIDeployment } from './components/APIDeployment';
 import { CodeWorkspace } from './components/CodeWorkspace';
 import { UIBuilder } from './components/UIBuilder';
-import { APITesting } from './components/APITesting';
+import APITesting from './components/APITesting';  // Default import
 import { ModelStorage } from './components/ModelStorage';
 import { LandingPage } from './components/LandingPage';
 
