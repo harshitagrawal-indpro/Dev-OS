@@ -85,8 +85,43 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      {/* Bolt.new Badge - Fixed positioning with custom styles */}
+      <style>{`
+        .bolt-badge {
+          transition: all 0.3s ease;
+        }
+        @keyframes badgeIntro {
+          0% { transform: rotateY(-90deg); opacity: 0; }
+          100% { transform: rotateY(0deg); opacity: 1; }
+        }
+        .bolt-badge-intro {
+          animation: badgeIntro 0.8s ease-out 1s both;
+        }
+        .bolt-badge-intro.animated {
+          animation: none;
+        }
+        @keyframes badgeHover {
+          0% { transform: scale(1) rotate(0deg); }
+          50% { transform: scale(1.1) rotate(22deg); }
+          100% { transform: scale(1) rotate(0deg); }
+        }
+        .bolt-badge:hover {
+          animation: badgeHover 0.6s ease-in-out;
+        }
+      `}</style>
+      
+      <div className="fixed top-4 right-4 z-50">
+        <a href="https://bolt.new/" target="_blank" rel="noopener noreferrer" 
+           className="block transition-all duration-300 hover:shadow-2xl">
+          <img src="https://storage.bolt.army/black_circle_360x360.png" 
+               alt="Built with Bolt.new badge" 
+               className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full shadow-lg bolt-badge bolt-badge-intro"
+               onAnimationEnd={(e) => e.currentTarget.classList.add('animated')} />
+        </a>
+      </div>
+
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+      <header className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-3">
